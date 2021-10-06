@@ -12,15 +12,22 @@ from django.views.generic import DetailView, CreateView, UpdateView, DeleteView
 
 from todaymovieapp.decorators import todaymovie_ownership_required
 from todaymovieapp.forms import TodaymovieUpdateForm
+from todaymovieapp.models import todaymovie
 
 has_ownership = [todaymovie_ownership_required, login_required]
 
 @login_required
 def main(request):
     if request.method == "POST":
-        return render(request, 'todaymovieapp/login.html')
+        temp = request.POST.get('main_input')
+        new_main = todaymovie()
+        new_main.text = temp
+        new_main.save()
+
+        return HttpResponseRedirect(reverse('todaymovie:main'))
     else:
-        return HttpResponseRedirect(reverse('todaymovieapp:main'))
+        main_list = todaymovie.objects.all()
+        return render(request, 'todaymovieapp/main.html', context={'main_list': main_list})
 
 class TodaymovieCreateView(CreateView):
     model = User
