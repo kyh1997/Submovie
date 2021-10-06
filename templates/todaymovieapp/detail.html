@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div>
+        <div style="text-align: center; max-width: 400px; margin: 4rem auto">
+
+            {% if target_user.profile %}
+            <img src="{{ target_user.profile.image.url }}" alt=""
+                 style="height: 10rem; width: 10rem; border-radius: 20rem; margin-bottom: 2rem;">
+
+            <h2 style="font-family: 'NanumSquareB'">
+                {{ target_user.profile.nickname }}
+                {% if target_user == user %}
+                <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
+                    수정
+                </a>
+                {% endif %}
+            </h2>
+            <h5 style="margin-bottom: 3rem;">
+                {{ target_user.profile.message }}
+            </h5>
+            {% else %}
+                {% if target_user == user %}
+
+                <a href="{% url 'profileapp:create' %}">
+                    <h2 style="font-family: 'NanumSquareB'">
+                        프로파일 생성
+                    </h2>
+                </a>
+                {% else %}
+                    <h2>
+                        닉네임 미설정
+                    </h2>
+                {% endif %}
+            {% endif %}
+
+            {% if target_user == user %}
+            <a href="{% url 'todaymovieapp:update' pk=user.pk %}">
+                <p>
+                    정보수정
+                </p>
+            </a>
+            <a href="{% url 'todaymovieapp:delete' pk=user.pk %}">
+                <p>
+                    계정삭제
+                </p>
+            </a>
+            {% endif %}
+
+        </div>
+    </div>
+
+{% endblock %}

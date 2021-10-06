@@ -1,0 +1,30 @@
+
+.main_layout_header_logo {
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.main_layout_header_menu {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.main_layout_footer_logo {
+    font-family: 'Do Hyeon', sans-serif;
+    margin-right: 0.3rem
+}
+
+.main_layout_footer_logo2 {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+}
+
+.main_layout_footer_service {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    text-align: left; margin-bottom: 0.5rem
+}
+
+.main_layout_footer_csad {
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: left; font-size: 13px;
+    text-decoration: none;
+}
