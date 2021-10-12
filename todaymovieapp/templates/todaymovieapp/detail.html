@@ -7,7 +7,7 @@
 
             {% if target_user.profile %}
             <img src="{{ target_user.profile.image.url }}" alt=""
-                 style="height: 10rem; width: 10rem; border-radius: 20rem; margin-bottom: 2rem;">
+                 style="height: 10rem; width: 10rem; border-radius: 20rem; margin-bottom: 2rem; object-fit: cover;">
 
             <h2 style="font-family: 'NanumSquareB'">
                 {{ target_user.profile.nickname }}
@@ -48,6 +48,9 @@
             </a>
             {% endif %}
 
+        </div>
+        <div>
+            {% include 'snippets/list_fragment.html' with article_list=object_list %}
         </div>
     </div>
 

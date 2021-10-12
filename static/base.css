@@ -1,6 +1,7 @@
 
 .main_layout_header_logo {
     font-family: 'Do Hyeon', sans-serif;
+    font-size: 30px;
 }
 
 .main_layout_header_menu {
@@ -10,6 +11,7 @@
 .main_layout_footer_logo {
     font-family: 'Do Hyeon', sans-serif;
     margin-right: 0.3rem
+
 }
 
 .main_layout_footer_logo2 {
@@ -20,7 +22,7 @@
 .main_layout_footer_service {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 13px;
-    text-align: left; margin-bottom: 0.5rem
+    margin-bottom: 0.5rem
 }
 
 .main_layout_footer_csad {
@@ -33,4 +35,44 @@
     html {
         font-size: 13px;
     }
+}
+
+.todaymovie_header_nav {
+    margin: 0 0.5rem;
+}
+
+.menu_header > ul {
+    display: inline-block;
+    margin: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+.menu_header > ul > li {
+    display: inline-block;
+    margin: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+.menu_header > ul > li > a {
+    color: black;
+    text-decoration: none;
+}
+
+.menu_header > ul > li > a:hover {
+    color: deepskyblue;
+}
+
+.menu_footer > ul > li {
+    display: inline-block;
+}
+
+.menu_footer > ul > li > a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu_footer > ul > li > a:hover {
+    color: deepskyblue;
 }

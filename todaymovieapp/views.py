@@ -9,7 +9,9 @@ from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic.list import MultipleObjectMixin
 
+from articleapp.models import Article
 from todaymovieapp.decorators import todaymovie_ownership_required
 from todaymovieapp.forms import TodaymovieUpdateForm
 from todaymovieapp.models import todaymovie
@@ -35,10 +37,16 @@ class TodaymovieCreateView(CreateView):
     success_url = reverse_lazy('todaymovieapp:main')
     template_name = 'todaymovieapp/create.html'
 
-class TodaymovieDetailView(DetailView):
+class TodaymovieDetailView(DetailView, MultipleObjectMixin):
     model = User
     context_object_name = 'target_user'
     template_name = 'todaymovieapp/detail.html'
+
+    paginate_by = 10
+
+    def get_context_data(self, **kwargs):
+        object_list = Article.objects.filter(writer=self.get_object())
+        return super(TodaymovieDetailView, self).get_context_data(object_list=object_list, **kwargs)
 
 @method_decorator(has_ownership, 'get')
 @method_decorator(has_ownership, 'post')
