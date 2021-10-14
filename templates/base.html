@@ -5,13 +5,9 @@
 
 <body style="font-family: 'NanumSquareR';">
 
-    {% include 'header.html' %}
+    {% include 'header_login.html' %}
 
-    <div style="text-align: center; height: 200px">
-            <form action="#">
-                <input autocomplete="off" placeholder="검색" type="text" name="searchKeyword" class="search" value="">
-            <form>
-        </div>
+    {% include 'header.html' %}
 
     {% block content %}
     {% endblock %}

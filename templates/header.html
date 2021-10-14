@@ -1,5 +1,6 @@
 
-<nav class="menu_header">
+<nav style="text-align: center; height: 300px"
+        class="menu_header">
 
     <ul>
         <li class="main_layout_header_logo">
@@ -14,24 +15,9 @@
         <li class="todaymovie_header_nav">
             영화
         </li>
-        <li class="class=todaymovie_header_nav">
+        <li class="todaymovie_header_nav">
             TV 프로그램
         </li>
-        {% if not user.is_authenticated %}
-        <li>
-            <a href="{% url 'todaymovieapp:login' %}?next={{ request.path }}" class="todaymovie_header_nav">로그인</a>
-        </li>
-        <li>
-            <a href="{% url 'todaymovieapp:create' %}" class="todaymovie_header_nav">가입하기</a>
-        </li>
-        {% else %}
-        <li>
-            <a href="{% url 'todaymovieapp:detail' pk=user.pk %}" class="todaymovie_header_nav">마이페이지</a>
-        </li>
-        <li>
-            <a href="{% url 'todaymovieapp:logout' %}?next={{ request.path }}" class="todaymovie_header_nav">로그아웃</a>
-        </li>
-        {% endif %}
 
     </ul>
 

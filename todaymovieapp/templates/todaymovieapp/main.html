@@ -2,28 +2,12 @@
 
 {% block content %}
 
-    <div style="border-radius: 1rem; margin: 2rem; text-align: center">
-        <h1 style="font-family: 'Noto Sans KR', sans-serif">
-            Hallym Moive
-        </h1>
+    <div style="height: 300px; text-align: center">
 
-        <form action="/todaymovies/main/" method="post">
-            {% csrf_token %}
-            <div>
-                <input type="text" name="main_input">
-            </div>
-            <div>
-                <input type="submit" class="btn btn-primary" value="POST">
-            </div>
+        <form action="#" method="get" onsubmit="return procFilter(this, search)">
+            <input type="text" name="search_keyword" value="" placeholder="검색">
         </form>
 
-        {% if main_list %}
-            {% for main in main_list %}
-            <h4>
-                {{ main.text }}
-            </h4>
-            {% endfor %}
-        {% endif %}
     </div>
 
 {% endblock %}
