@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 
+{% load bootstrap4 %}
 {% block content %}
 
     <div style="height: 300px; text-align: center">
 
-        <form action="#" method="get" onsubmit="return procFilter(this, search)">
-            <input type="text" name="search_keyword" value="" placeholder="검색">
-        </form>
+        <form action="" method="get">
+        <input style="height: 40px; width: 400px; border-radius: 30px;"
+               type="search" placeholder=" 검색" name="keyword">
+  </form>
 
     </div>
 

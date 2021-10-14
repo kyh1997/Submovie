@@ -1,12 +1,14 @@
 
 .main_layout_header_logo {
     font-family: 'Do Hyeon', sans-serif;
-    font-size: 30px;
+    font-size: 40px;
     display: flex;
 }
 
 .main_layout_header_menu {
     font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    margin: 0 0.5rem;
 }
 
 .main_layout_footer_logo {
@@ -36,10 +38,6 @@
     html {
         font-size: 13px;
     }
-}
-
-.todaymovie_header_nav {
-    margin: 0 0.5rem;
 }
 
 .menu_header > ul {

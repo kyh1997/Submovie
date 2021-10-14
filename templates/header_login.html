@@ -4,17 +4,17 @@
 <ul>
         {% if not user.is_authenticated %}
         <li>
-            <a href="{% url 'todaymovieapp:login' %}?next={{ request.path }}" class="todaymovie_header_nav">로그인</a>
+            <a href="{% url 'todaymovieapp:login' %}?next={{ request.path }}" class="main_layout_header_menu">로그인</a>
         </li>
         <li>
-            <a href="{% url 'todaymovieapp:create' %}" class="todaymovie_header_nav">가입하기</a>
+            <a href="{% url 'todaymovieapp:create' %}" class="main_layout_header_menu">가입하기</a>
         </li>
         {% else %}
         <li>
-            <a href="{% url 'todaymovieapp:logout' %}?next={{ request.path }}" class="todaymovie_header_nav">로그아웃</a>
+            <a href="{% url 'todaymovieapp:logout' %}?next={{ request.path }}" class="main_layout_header_menu">로그아웃</a>
         </li>
         <li>
-            <a href="{% url 'todaymovieapp:detail' pk=user.pk %}" class="todaymovie_header_nav">마이페이지</a>
+            <a href="{% url 'todaymovieapp:detail' pk=user.pk %}" class="main_layout_header_menu">마이페이지</a>
         </li>
         {% endif %}
     </ul>
