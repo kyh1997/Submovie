@@ -12,8 +12,10 @@
             <h2 style="font-family: 'NanumSquareB'">
                 {{ target_user.profile.nickname }}
                 {% if target_user == user %}
-                <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
-                    수정
+                <a class="material-icons"
+                   style="margin-left: 6px; box-shadow: 0 0 4px #ccc; border-radius: 10rem; padding: .2rem;"
+                   href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
+                    edit
                 </a>
                 {% endif %}
             </h2>
@@ -36,15 +38,15 @@
             {% endif %}
 
             {% if target_user == user %}
-            <a href="{% url 'todaymovieapp:update' pk=user.pk %}">
-                <p>
-                    정보수정
-                </p>
+            <a class="material-icons"
+               style="box-shadow: 0 0 4px #ccc; border-radius: 10rem; padding: .2rem;"
+               href="{% url 'todaymovieapp:update' pk=user.pk %}">
+                    settings
             </a>
-            <a href="{% url 'todaymovieapp:delete' pk=user.pk %}">
-                <p>
-                    계정삭제
-                </p>
+            <a class="material-icons"
+               style="box-shadow: 0 0 4px #fcc; border-radius: 10rem; padding: .2rem;"
+               href="{% url 'todaymovieapp:delete' pk=user.pk %}">
+                    cancel
             </a>
             {% endif %}
 

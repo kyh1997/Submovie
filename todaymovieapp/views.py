@@ -18,7 +18,6 @@ from todaymovieapp.models import todaymovie
 
 has_ownership = [todaymovie_ownership_required, login_required]
 
-@login_required
 def main(request):
     if request.method == "POST":
         temp = request.POST.get('main_input')
